@@ -1,0 +1,12 @@
+---
+- name: Deploy the web servers
+  hosts: inv1
+  become: true
+
+  tasks:
+    - name: Ensure required packages are installed
+      ansible.builtin.yum:
+        name:
+          - httpd
+        state: present
+
